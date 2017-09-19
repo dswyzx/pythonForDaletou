@@ -1,9 +1,0 @@
-D:\testvs\DotNetCoreTest\DotNetCoreTest\bin\Debug\netcoreapp1.1\DotNetCoreTest.deps.json
-D:\testvs\DotNetCoreTest\DotNetCoreTest\bin\Debug\netcoreapp1.1\DotNetCoreTest.runtimeconfig.json
-D:\testvs\DotNetCoreTest\DotNetCoreTest\bin\Debug\netcoreapp1.1\DotNetCoreTest.runtimeconfig.dev.json
-D:\testvs\DotNetCoreTest\DotNetCoreTest\bin\Debug\netcoreapp1.1\DotNetCoreTest.dll
-D:\testvs\DotNetCoreTest\DotNetCoreTest\bin\Debug\netcoreapp1.1\DotNetCoreTest.pdb
-D:\testvs\DotNetCoreTest\DotNetCoreTest\obj\Debug\netcoreapp1.1\DotNetCoreTest.csprojResolveAssemblyReference.cache
-D:\testvs\DotNetCoreTest\DotNetCoreTest\obj\Debug\netcoreapp1.1\DotNetCoreTest.AssemblyInfo.cs
-D:\testvs\DotNetCoreTest\DotNetCoreTest\obj\Debug\netcoreapp1.1\DotNetCoreTest.dll
-D:\testvs\DotNetCoreTest\DotNetCoreTest\obj\Debug\netcoreapp1.1\DotNetCoreTest.pdb
