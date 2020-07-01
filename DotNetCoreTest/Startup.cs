@@ -64,13 +64,6 @@ namespace DotNetCoreTest
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{controller=Home}/{action=Index}/{id?}");
-            //});
-
             ConstsConf.WWWRootPath = env.WebRootPath;
             ConstsConf.txtName = Configuration["TextName:DLTJSON"];
             //string y = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build()["ConnectionStrings:SqlServer"];
