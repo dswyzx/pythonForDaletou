@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DotNetCoreTest.Models;
 using Microsoft.AspNetCore.Mvc;
-using NLog;
-using DotNetCoreTest.Models;
+using System.Collections.Generic;
 
 namespace DotNetCoreTest.Controllers
 {
@@ -12,10 +8,9 @@ namespace DotNetCoreTest.Controllers
     {
         public IActionResult Index()
         {
-            GetAllInfo.CrawlLatestDLTInfo(2);
+            //GetAllInfo.CrawlLatestDLTInfo(2);
             List<DLTInfo> lstDlt = GetAllInfo.GetNewList(10);
             return View(lstDlt);
-            //  return View();
         }
 
         public IActionResult About()

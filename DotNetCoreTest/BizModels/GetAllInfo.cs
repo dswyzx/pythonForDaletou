@@ -38,7 +38,7 @@ namespace DotNetCoreTest
                 {
                     try
                     {
-                         var indexURL = $"http://www.lottery.gov.cn/historykj/history_{i}.jspx?_ltype=dlt";
+                        var indexURL = $"http://www.lottery.gov.cn/historykj/history_{i}.jspx?_ltype=dlt";
                         //var indexURL = $"http://www.demo.com/asd.html";
                         FillDLTFromOnline(indexURL);
                         Thread.Sleep(2000);
@@ -104,7 +104,7 @@ namespace DotNetCoreTest
         internal static List<DLTInfo> GetNewList(int cou)
         {
             List<DLTInfo> list = GetAllDLTNUM();
-            return list.Take<DLTInfo>(cou).ToList<DLTInfo>();
+            return list.Take(cou).ToList();
         }
 
         #endregion
@@ -129,19 +129,16 @@ namespace DotNetCoreTest
                 try
                 {
                     StreamReader sr = new StreamReader(stream);
-
-                    string strLine = sr.ReadLine();
-
+                    // string strLine = sr.ReadLine();
                     JsonSerializer serializer = new JsonSerializer
                     {
                         NullValueHandling = NullValueHandling.Ignore,
                         Converters = { new JavaScriptDateTimeConverter() }
                     };
-                    //构建Json.net的读取流  
+                    //构建Json.net的读取流
                     using (var reader = new JsonTextReader(sr))
                     {
                         var lstDLT = serializer.Deserialize<List<DLTInfo>>(reader);
-                        // var res = serializer.Deserialize<DLTInfo>(reader);
                         foreach (var item in lstDLT.Distinct().ToList())
                         {
                             list.Add(item);

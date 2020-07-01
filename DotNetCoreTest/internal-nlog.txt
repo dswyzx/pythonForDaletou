@@ -1,6 +1,0 @@
-2017-09-19 12:21:11.6284 Warn Error when formatting a message. Exception: System.FormatException: Input string was not in a correct format.
-   at System.Text.StringBuilder.FormatError()
-   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
-   at System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
-   at System.String.Format(IFormatProvider provider, String format, Object[] args)
-   at NLog.LogEventInfo.CalcFormattedMessage()

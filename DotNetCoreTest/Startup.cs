@@ -3,9 +3,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using NLog.Web;
-using System.IO;
-using Microsoft.EntityFrameworkCore;
 
 
 namespace DotNetCoreTest
@@ -36,7 +33,7 @@ namespace DotNetCoreTest
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            env.ConfigureNLog(Path.Combine(env.WebRootPath, "nlog.config"));
+            // env.ConfigureNLog(Path.Combine(env.WebRootPath, "nlog.config"));
 
             //loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             // loggerFactory.AddDebug();
