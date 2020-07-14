@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DotNetCoreTest.Models
+namespace AutoGetDLT.Models
 {
     public class DLTInfo : IEquatable<DLTInfo>
     {

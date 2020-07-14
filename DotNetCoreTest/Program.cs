@@ -1,21 +1,33 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using System.IO;
+using Microsoft.Extensions.Logging;
+using NLog;
+using NLog.Web;
 
-namespace DotNetCoreTest
+namespace AutoGetDLT
 {
     public class Program
     {
+
         public static void Main(string[] args)
         {
+            var logger = LogManager.GetCurrentClassLogger();
+
             CreateHostBuilder(args).Build().Run();
         }
 
+
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-        Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder =>
-            {
-                webBuilder.UseStartup<Startup>();
-            });
+                     Host.CreateDefaultBuilder(args)
+                  .ConfigureWebHostDefaults(webBuilder =>
+                  {
+                      webBuilder.UseStartup<Startup>();
+                  })
+                  .ConfigureLogging(logging =>
+                  {
+                      logging.ClearProviders();
+                      logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
+                  })
+                  .UseNLog();
     }
 }

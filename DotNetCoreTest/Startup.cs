@@ -3,12 +3,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NLog;
 
-
-namespace DotNetCoreTest
+namespace AutoGetDLT
 {
     public class Startup
     {
+
+        Logger logger = LogManager.GetCurrentClassLogger();
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -26,7 +28,7 @@ namespace DotNetCoreTest
         {
             services.AddControllersWithViews();
 
-            // services.AddMvc();
+            services.AddMvc();
             // services.AddDbContext<EFDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlServer")));
             //  services.AddTimedJob();
         }
@@ -36,11 +38,7 @@ namespace DotNetCoreTest
         {
             // env.ConfigureNLog(Path.Combine(env.WebRootPath, "nlog.config"));
 
-            //loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            // loggerFactory.AddDebug();
-
-            //  app.UseTimedJob();
-
+            // app.UseTimedJob();
 
             if (env.IsDevelopment())
             {
@@ -56,6 +54,21 @@ namespace DotNetCoreTest
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.Use(async (context, next) =>
+            {
+                LogHelper.Info(context.Request.Path);
+                logger.Info(context.Request.Path);
+                await next.Invoke();
+                //using (var bodyReader = new StreamReader(context.Request.Body))
+                //{
+                //    string body = await bodyReader.ReadToEndAsync();
+                //    //LogHelper.Info(body);
+                //    //context.Request.Body = new MemoryStream(Encoding.UTF8.GetBytes(body));
+                //    await next.Invoke();
+                //    // context.Request.Body = initialBody;
+                //}
+            });
 
             app.UseEndpoints(endpoints =>
             {

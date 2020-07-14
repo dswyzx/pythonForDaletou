@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace DotNetCoreTest
+namespace AutoGetDLT
 {
     public class HTTPHelper
     {

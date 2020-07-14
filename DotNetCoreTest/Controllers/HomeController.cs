@@ -1,11 +1,19 @@
-﻿using DotNetCoreTest.Models;
+﻿using AutoGetDLT.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 
-namespace DotNetCoreTest.Controllers
+namespace AutoGetDLT.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
         public IActionResult Index()
         {
             //GetAllInfo.CrawlLatestDLTInfo(2);
@@ -15,6 +23,7 @@ namespace DotNetCoreTest.Controllers
 
         public IActionResult About()
         {
+            // _logger.LogTrace(1, "LogTrace NLog injected into HomeController");
             ViewData["Message"] = "Your application description page.";
 
             return View();

@@ -1,4 +1,4 @@
-﻿using DotNetCoreTest.Models;
+﻿using AutoGetDLT.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace DotNetCoreTest
+namespace AutoGetDLT
 {
     public class WriteHelper
     {

@@ -1,6 +1,6 @@
 ﻿using Pomelo.AspNetCore.TimedJob;
 
-namespace DotNetCoreTest.Jobs
+namespace AutoGetDLT.Jobs
 {
     public class AutoGetDLTListJob : Job
     {

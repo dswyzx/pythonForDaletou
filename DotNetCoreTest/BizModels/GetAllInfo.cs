@@ -1,5 +1,5 @@
 ﻿using AngleSharp.Parser.Html;
-using DotNetCoreTest.Models;
+using AutoGetDLT.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
@@ -8,11 +8,9 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 
-namespace DotNetCoreTest
+namespace AutoGetDLT
 {
-    /// <summary>
-    /// 最新电影数据
-    /// </summary>
+
     public class GetAllInfo
     {
         private static WriteHelper writeHelper = new WriteHelper(Path.Combine(ConstsConf.WWWRootPath, ConstsConf.txtName));

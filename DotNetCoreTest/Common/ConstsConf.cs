@@ -1,4 +1,4 @@
-﻿namespace DotNetCoreTest
+﻿namespace AutoGetDLT
 {
     public class ConstsConf
     {
