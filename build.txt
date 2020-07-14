@@ -1,7 +1,7 @@
 dotnet publish -c Release -r linux-x64 --self-contained true
 
 
-dotnet DotNetCoreTest.dll --urls http://localhost:4000
+dotnet AutoGetDLT.dll --urls http://localhost:4000
 
 server {
     listen        4001;

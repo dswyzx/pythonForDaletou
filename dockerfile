@@ -4,4 +4,4 @@ COPY . /app
 
 ENV ASPNETCORE_URLS=http://+:80
 
-ENTRYPOINT ["dotnet", "DotNetCoreTest.dll"]
+ENTRYPOINT ["dotnet", "AutoGetDLT.dll"]
